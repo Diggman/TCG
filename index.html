@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<title>Tecnología Comunicación Gráfica Soacha</title>
+<meta charset="utf-8">
+<meta name="description" content="Minisite no oficial y prototipo sonbre Tecnología en Comunicación Gráfica">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="css/normalize.css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/fwslider.css" media="all">
+<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/fwslider.js"></script>
+<script type="text/javascript" 	src="js/jquery.smint.js"></script>
+<script type="text/javascript">
+	
+
+$(document).ready( function() {
+    $('.menu').smint({
+    	'scrollSpeed' : 1000
+    });
+});
+
+
+</script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=true"></script>
+<script type="text/javascript">
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(4.579558,-74.222036);
+    
+         var myOptions = {
+           zoom: 16,
+           center: myLatlng,
+           mapTypeId: google.maps.MapTypeId.ROADMAP
+         }
+         var myMap = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+         
+         var locations = [
+                    [4.581516,-74.219665, 'Casona', '<p>Casona</p>'],
+                    [4.576543,-74.224261, 'Sede Académica', '<p>Sede Académica</p>'],
+                    ];
+    
+          for (var i = 0; i < locations.length; i++) {
+              var location = locations[i];
+              setmarker(myMap, location[0], location[1], location[2], location[3]); 
+          }
+        }
+  
+         function setmarker(myMap, lat, lng, title, content)
+         {
+            var markerLatlng = new google.maps.LatLng(lat, lng);
+            var myMarker = new google.maps.Marker({
+               position: markerLatlng, 
+               map: myMap,
+               title: title
+           });
+           
+           var myInfowindow = new google.maps.InfoWindow({
+               content: content
+           });
+        
+                   google.maps.event.addListener(myMarker, 'click', function() {
+                     if (myInfowindow.getMap()) {
+                       myInfowindow.close();
+                     }
+                     else {
+                       myInfowindow.open(myMap, myMarker);
+                     }
+                   });
+                 }
+</script>
+</head>
+<body onload="setTimeout(function() { window.scrollTo(0, 1) }, 100); initialize()">
+
+<div class="menu">
+		<div class="container">
+
+			<div id="logo" class="grid_2">
+				<img src="images/logotcg.png">
+			</div>
+
+			<div id="nav" class="grid_10 omega">
+				<ul class="navigation">
+          <a href="#" id="s0"><li>Inicio</li></a>
+					<a href="#" id="s1"><li>Programa</li></a>
+					<a href="#" id="s2"><li>Perfiles</li></a>
+					<a href="#" id="s3"><li>Plan</li></a>
+					<a href="#" id="s4"><li>Contacto</li></a>
+				</ul>
+			</div>
+
+		</div>
+	</div>
+
+	
+
+
+  <div class="section s0">
+      <div id="fwslider">
+        <div class="slider_container">
+            <div class="slide"> 
+                <!-- Slide image -->
+                    <img src="images/slider1.png">
+                <!-- /Slide image -->
+                <!-- Texts container -->
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <!-- Text title -->
+                        <h4 class="title">¡Universidad Minuto de Dios 2014!</h4>
+                        <!-- /Text title -->
+                    </div>
+                </div>
+                 <!-- /Texts container -->
+            </div>
+            <!-- /Duplicate to create more slides -->
+            <div class="slide">
+                <img src="images/slider1.png">
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <h4 class="title">Diplomado en Ilustración Fantastica</h4>
+                    </div>
+                </div>
+            </div>
+            <!--/slide -->
+        <div class="timers"></div>
+        <div class="slidePrev"><span></span></div>
+        <div class="slideNext"><span></span></div>
+    </div>
+    </div>
+  </div>
+    <!--/slider -->
+
+	<div class="section s1">
+    <div id="barra1">
+        <div class="contenido">
+            <article class="central">
+                 <h4>Programa</h4>
+                <hr>
+            </article>
+        </div>        
+    </div>
+    <div class="contenido">
+          <article class="central programa">
+              <p><i>Este programa de la Universidad Minuto de Dios, que nace como respuesta a la demanda de comunicadores especializados en el área gráfica, incorporando en su formación componentes de comunicación y diseño. Ha alcanzado los más altos estándares logrando la acreditación de alta calidad. Actualmente goza de prestigio en el medio por el impacto de sus estudiantes y egresados en el mundo gráfico y editorial. Tiene una duración de 6 semestres y atiende en jornadas diurnas y nocturnas, en los cuales se tienen que completar 108 créditos, con el fin de obtener el título de Tecnólogo en Comunicación Gráfica.</i></p>
+            </article>
+            
+            <figure class="box1">
+                <img src="images/mision.png" alt="Misión">
+                <figcaption>                  
+                <h4>Misión</h4>
+                <p>Formar profesionales capaces y visionarios que mediante las nuevas tecnologías de la información y la comunicación, desarrollen comunicaciones más humanas y con amplio sentido social para la construcción de una nueva Colombia.</p>                
+                </figcaption>
+            </figure>
+            
+            <figure class="box1" id="margen">
+                <img src="images/vision.png" alt="Visión">
+                <figcaption>                  
+                <h4>Visión</h4>
+                <p>Consolidar, en muy corto tiempo, nuestra 
+                imagen de calidad académica e investigación, como el programa líder y pionero en la nueva profesión de la comunicación gráfica tanto en Colombia 
+                como en América Latina. </p>  
+                <br>              
+                </figcaption>
+            </figure>
+    </div>
+  </div>
+
+<!-- section 2 -->
+
+	<div class="section s2">
+	  
+       <div id="barra2">
+        <div class="contenido">
+            <article class="central2">
+                 <h4>Perfiles</h4>
+                <hr>
+            </article>
+        </div>    
+       </div>
+      <div class="contenido">
+      <article class="central2">
+                <p><i>El programa requiere un aspirante con un perfil específico, el cual sea acorde con lo que el programa imparte en las clases, y que a medida que avanza en la tecnología lo enriquezca y proyecte a su profesión.</i></p>
+     </article>
+     </div>        
+       <section class="contenido2">
+            <section class="ilust">
+                <img src="images/perfil1.png" alt="Aspirante">
+           </section>
+
+            <section>
+                <div><h3>Perfil del Aspirante</h3></div>
+               <p>Los aspirantes a ingresar al programa de Tecnología en Comunicación Gráfica deberán poseer y manifestar las siguientes características:</p>
+               <ul>
+                    <li>Ser creativos e innovadores.</li>
+                    <li>Interés en la expresión gráfica, con deseos de transformar sus ideas en imágenes.</li>
+                    <li>Interés en lograr a través de su trabajo, una mejor calidad de vida tanto para él como para su entorno.</li>
+                    <li>Tener aspiraciones de crecimiento personal y profesional para obtener una formación más específica y enfocada hacia un área particular de la comunicación gráfica.</li>
+               </ul>
+           </section>    
+       </section>	
+
+       <section class="contenido3">
+            <section class="ilust">
+                <img src="images/perfil2.png" alt="aspirante">
+           </section>
+
+            <section>
+                <div><h3>Perfil del Ocupacional</h3></div>
+               <p>Los egresados del programa adquieren las siguientes características:</p>
+               <ul>
+                    <li>Resuelve problemas comunicativos y los soluciona con lenguajes gráficos, audiovisuales y multimediales.</li>
+                    <li>Crea estrategias de comunicación utilizando los medios audiovisuales, impresos y tridimensionales del diseño.</li>
+                    <li>Desarrolla, ejecuta y controla proyectos gráficos, publicitarios, editoriales y multimediales.</li>
+                    <li>Manifiesta una sensibilidad que le permite actuar en consecuencia con las necesidades sociales de los grupos o comunidades a las que se dirige.</li>
+                    <li>Está en capacidad de participar en acciones de investigación teórico - prácticas sobre la comunicación gráfica.
+                    Fomenta en su campo una actitud crítica y creativa para transformar su medio social.</li>
+                    <li>Colabora con los medios de comunicación de manera responsable y ética.</li>
+                </ul>
+               </section>
+           </div>    
+       </section>
+
+	</div>
+
+<!-- section 3 -->
+
+	<div class="section s3"> 
+    <div id="barra3">
+        <div class="contenido">
+            <article class="central">
+                 <h4>Plan de Estudios</h4>
+                <hr>
+            </article>
+        </div>        
+    </div>
+		<div class="contenido">
+            <article class="central">
+                <p><i>El estudiante puede cursar un máximo de 18 créditos académicos en cada período lectivo según se establece en el Art.50 del Reglamento Estudiantil UNIMINUTO.
+ Cada programa cuenta con estrategias de orientación y acompañamiento académicos para sugerir la ruta de inscripción de materias, dentro de la flexibilidad curricular permitida.</i></p>
+            </article>
+            <article class="plan">
+                <div>
+                <h4>I Semestre</h4>
+                    <ul>                    
+                        <li>Informática Básica.</li>
+                        <li>Teoría del Diseño I.</li>
+                        <li>Dibujo.</li>
+                        <li>Comunicación Oral y Procesos Lectores I.</li>
+                        <li>Inglés I.</li>
+                        <li>Formación Humana I.</li>
+                        <li>Fundamentos de la Comunicación.</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="plan plan2">
+                <h4>II Semestre</h4>
+                <ul>
+                    <li>Semiótica.</li>
+                    <li>Teoría del Diseño II.</li>
+                    <li>Diseño Tipográfico.</li>
+                    <li>Herramientas Gráficas.</li>
+                    <li>Fundamentos de Investigación.</li>
+                    <li>Inglés II.</li>
+                    <li>Formación Humana II.</li>
+                    <li>Formación Humana III.</li>
+                </ul>
+            </article>
+            <article class="plan">
+                <h4>III Semestre</h4>
+                <ul>
+                    <li>Comunicación y Cultura Visual.</li>
+                    <li>Redacción de Textos Estratégicos.</li>
+                    <li>Técnicas de Expresión Gráfica.</li>
+                    <li>Diagramación.</li>
+                    <li>Procesos de Impresión.</li>
+                    <li>Metodologías de la Investigación.</li>
+                    <li>Ingles III.</li>
+                    <li>Práctica Social I.</li>
+                </ul>
+            </article>
+            <article class="plan plan2">
+                <h4>IV Semestre</h4>
+                <ul>
+                    <li>Taller de la Imagen.</li>
+                    <li>Ilustración.</li>
+                    <li>Diseño Web.</li>
+                    <li>Investigación de Campo.</li>
+                    <li>Mercadeo y Publicidad.</li>
+                    <li>Creación de Empresas.</li>
+                    <li>Electiva.</li>
+                    <li>Práctica Social II.</li>
+                </ul>
+            </article>
+            <article class="plan">
+                <h4>V Semestre</h4>
+                <ul>
+                    <li>Fotografía.</li>
+                    <li>Comunicación Organizacional.</li>
+                    <li>Multimedia Cine y TV.</li>
+                    <li>Prensa y Planeación de Impresos.</li>
+                    <li>Presupuesto de Producción y Medios.</li>
+                    <li>Electiva.</li>
+                    <li>Práctica Profesional.</li>
+                </ul>
+            </article>
+            <article class="plan plan2">
+                <h4>VI Semestre</h4>
+                <ul>
+                    <li>Opción de Grado.</li>
+                    <li>Proyecto Creativo.</li>
+                    <li>Comercio Electronico.</li>
+                    <li>Retoque y Animación 3D.</li>
+                </ul>
+            </article>            
+        </div>        
+
+	</div>
+
+<!-- Section 4 -->
+	<div class="section s4">
+        <div id="barra4">
+            <div class="contenido">
+                <article class="central2">
+                     <h4>Contacto</h4>
+                    <hr>
+                </article>
+            </div>        
+        </div>    	
+        <div class="contenido"> 
+        <article class="central2">
+                <p><i>Para obtener mayor información sobre el programa, escriba sus inquietudes u opiniones y contáctenos en los datos que se encuentran a continuación.</i></p>
+            </article>           
+            <article class="info">            
+                <p class="icono1">Sede Académica: <br>Tranversal 5 #5G-95 Barrio Lagos de Malibú <br></p>
+                <p class="icono1">Sede Administrativa: <br> Cr 7 #12-24 Soacha Parque Principa <br></p>
+                <p class="icono2">722 02 33 <br>732 23 48 <br></p> 
+                <p class="icono3">732 94 56 </p>
+                <p class="icono4">soacha_divulgacion @uniminuto.edu</p>
+                <p class="icono5"><a href="http://uniminuto.edu/web/sede-cundinamarca/soacha">Web Sede Cundinamarca</a></p>
+                <p class="icono5"><a href="http://uniminuto.edu/">Web Sede Principal</a></p>              
+            </article>
+            <article class="info" id="info">
+                <form action="#" class="formit">
+                    <input type="text" name="name" placeholder="Nombre"/>
+                    <input type="text" name="email" placeholder="E-mail"/>
+                    <input type="text" name="url" placeholder="Sitio web (opcional)"/>
+                    <textarea name="message" placeholder="Escriba su mensaje"></textarea>
+                    <input type="submit" class="button_submit" value="Enviar">
+                </form>        
+            </article>
+        </div>
+        </article>          
+
+
+		<section id="mapa">
+            <div id="map_canvas" style="width:100%; height:100%"></div>    
+        </section>
+
+	</div>
+
+	<footer class="section s5"> 
+        <div class="contenido">
+            <section class="social-icons">                
+                 <ul>
+                     <li><a class="facebook" href="#" target="_blank"> </a></li>
+                     <li><a class="googleplus" href="#" target="_blank"></a></li>
+                     <li><a class="twitter" href="#" target="_blank"></a></li>
+                     <li><a class="youtube" href="#" target="_blank"></a></li>
+                 </ul>  
+                 <p>Design by <a href="https://twitter.com/digmangm" target="_blank">Digman</a></p>                                  
+            </section>           
+        </div>
+	</footer>
+
+	
+
+
+
+
+
+</body>
+</html>
